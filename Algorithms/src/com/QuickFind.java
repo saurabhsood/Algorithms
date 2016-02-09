@@ -3,7 +3,6 @@ package com;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Scanner;
 
 public class QuickFind {
 
@@ -52,6 +51,7 @@ public class QuickFind {
 	 {
 		 return id[p] == id[q];		 
 	 }
+	 
 	 
 	 public static void main(String s[]) throws NumberFormatException, IOException
 	 {
