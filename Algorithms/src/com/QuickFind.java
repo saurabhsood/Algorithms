@@ -14,26 +14,38 @@ public class QuickFind {
 		 id = new int[size];
 		 for(int i = 0 ; i < size; i++)
 		 {
-			 id[i] = i;
+			 id[i] = i; // N Operations
 		 }
 	 }
 	 
+	 //2N+2 Array Acess
 	 void union(int p,int q)
 	 {
-		 id[q] = id[p];
+		p = id[p];
+		q = id[q];
+		for(int i =0 ; i < id.length; i++)
+		{
+			if(id[i] == p)
+			{
+				id[i] = q;
+			}
+		}
 	 }
 	 
-	 void count[]
+	 int find(int q)
+	 {
+		 return id[q];
+	 }
+	 
+	 int count()
+	 {
+		 return id.length;
+	 }
+	 
+	 //2 Array Acess
 	 boolean connected(int p, int q)
 	 {
-		 if(id[p] == id[q])
-		 {
-			 return true;
-		 }
-		 else 
-		 {
-			 return false;
-		 }
+		 return id[p] == id[q];		 
 	 }
 	 
 }
