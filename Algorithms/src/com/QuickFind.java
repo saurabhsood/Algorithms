@@ -1,5 +1,10 @@
 package com;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Scanner;
+
 public class QuickFind {
 
 	private int id[];
@@ -46,6 +51,33 @@ public class QuickFind {
 	 boolean connected(int p, int q)
 	 {
 		 return id[p] == id[q];		 
+	 }
+	 
+	 public static void main(String s[]) throws NumberFormatException, IOException
+	 {
+		 BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		 QuickFind qf = new QuickFind(Integer.valueOf(br.readLine()));
+		 System.out.println("Size" + qf.count());
+		 String read = br.readLine();
+		 String a[];
+		 while(!read.equals(""))
+		 {
+			 a = read.split(" ");
+			 int p=Integer.valueOf(a[0]);
+			 int q=Integer.valueOf(a[1]);
+			 if(!qf.connected(p, q))
+			 {
+				 qf.union(p, q);
+				 System.out.println("Union   " +qf.id[p]+"    "+qf.id[q]);
+			 }
+			 else
+			 {
+				 System.out.println("Connected   " +qf.id[p]+"    "+qf.id[q]);
+			 }
+			 
+			 read = br.readLine();
+		 }
+		br.close();
 	 }
 	 
 }
