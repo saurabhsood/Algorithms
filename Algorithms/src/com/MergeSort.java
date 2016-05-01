@@ -40,7 +40,7 @@ public class MergeSort {
 		for(int i =0; i <med;i++)
 		{
 			if(m1>= med)b[start+i]=a[med+i];
-			else if(m2>= end)b[start+i]=a[start+i];
+			else if(m2>= (end-med))b[start+i]=a[start+i];
 			else if(a[med+i] < a[start+i])
 			{
 				b[start+i] = a[med+i];
