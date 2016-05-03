@@ -1,4 +1,4 @@
-package com;
+package pract;
 
 public class MergeSort {
 	
@@ -37,18 +37,18 @@ public class MergeSort {
 		int m2 =0;
 
 
-		for(int i =0; i <med;i++)
+		for(int i =0; i <end-start;i++)
 		{
-			if(m1>= med)b[start+i]=a[med+i];
-			else if(m2>= (end-med))b[start+i]=a[start+i];
-			else if(a[med+i] < a[start+i])
+			if(m1> med)b[start+i]=a[med+i];
+			else if(m2 > (end-med)+i)b[start+i]=a[start+i];
+			else if(a.length > ((end-med)+i) && a[m2+med] < a[start+m1])
 			{
-				b[start+i] = a[med+i];
+				b[start+i] = a[m2+start+med];
 				m2++;
 		}
 			else
 			{
-				b[start+i] = a[start+i];
+				b[start+i] = a[m1+start];
 				m1++;
 			}
 			
