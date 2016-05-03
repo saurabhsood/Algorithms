@@ -1,10 +1,12 @@
-package pract;
-
+package com;
 public class MergeSort {
 	
 	public static void main(String s[])
 	{
-		mergeandSort(new int[]{1,3,5,0},0,4);
+		int a[] =new int[]{0,3,-5,7,1,2,7,8,9,-4,-100,-12,12,14,17,77,-100000,99999999}; 
+		b= new int[a.length];
+		mergeandSort(a,0,a.length);
+		
 		for(int i=0; i <b.length;i++)
 		{
 			System.out.print(b[i]+",");	
@@ -30,28 +32,45 @@ public class MergeSort {
 		System.out.println("Finally Sort " +start +" "+end);
 	}
 	
-	static int b[]= new int[6];
+	static int b[];
 	public static void sort(int []a,int start,int med,int end)
 	{
-		int m1 =0;
-		int m2 =0;
-
-
-		for(int i =0; i <end-start;i++)
+		med = start+med;
+		int m1 =start;
+		int m2 = med;
+		for(int i = start; i < end;i++)
 		{
-			if(m1> med)b[start+i]=a[med+i];
-			else if(m2 > (end-med)+i)b[start+i]=a[start+i];
-			else if(a.length > ((end-med)+i) && a[m2+med] < a[start+m1])
-			{
-				b[start+i] = a[m2+start+med];
-				m2++;
+			b[i]=a[i];
 		}
+		
+
+		for(int i =start; i <end;i++)
+		{
+			if(m1>= med)
+				{
+					b[i]=a[m2];
+					m2++;
+				}
+			else if(m2 >= end)
+				{
+					b[i]=a[m1];
+					m1++;
+				}
+			else if(b[m2] < a[m1])
+			{
+				b[i] = a[m2];
+				m2++;
+			}			
 			else
 			{
-				b[start+i] = a[m1+start];
+				b[i] = a[m1];
 				m1++;
 			}
 			
+		}
+		for(int i = start; i < end;i++)
+		{
+			a[i]=b[i];
 		}
 	}
 
