@@ -19,17 +19,13 @@ public class MergeSort {
 	{
 		int med =0;
 		if(end-start >1)
-		{
-			med = Math.round((end-start)/2);			
-			mergeandSort(a,start,med);
+		{			
+			med = Math.round((end-start)/2);
+			mergeandSort(a,start,start+med);
 			mergeandSort(a,start+med,end);
 			sort(a,start,med,end);
 		}
-		else
-		{
-			med=1;
-		}
-		System.out.println("Finally Sort " +start +" "+end);
+		
 	}
 	
 	static int b[];
