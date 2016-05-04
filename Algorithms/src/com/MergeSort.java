@@ -61,8 +61,7 @@ public class MergeSort {
 			{
 				b[i] = a[m1];
 				m1++;
-			}
-			
+			}			
 		}
 		for(int i = start; i < end;i++)
 		{
