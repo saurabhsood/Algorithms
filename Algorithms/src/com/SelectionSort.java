@@ -1,5 +1,7 @@
 package com;
 
+import java.util.Arrays;
+
 public class SelectionSort {
 
 	private int[] element;
@@ -27,13 +29,18 @@ public class SelectionSort {
 			}
 			element[index] = element[i];
 			element[i]=min;
+			for(int k=0; k <element.length;k++)
+			{
+				System.out.print(element[k]+",");	
+			}
+			System.out.println();;
 		}
 		
 	}
 	public static void main(String s[])
 	{
 		SelectionSort ss= new SelectionSort(5);
-		ss.element = new int[]{8,7,1,2,9,90,50,10,2,3,7};
+		ss.element = new int[]{30,43,66,28,24,56,31,52,94,73};
 		ss.sort();
 		
 		for(int i=0; i <ss.element.length;i++)
