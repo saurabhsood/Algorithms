@@ -3,7 +3,7 @@ package com;
 public class QuickSort {
 
 	public static void main(String s[]) {
-		int[] a = { 200, 5, 10, 8, 7,1,100};
+		int[] a = { 2, 5, 10,1,100};
 		sortOnDivNumber(a, 0, a.length);
 		for (int i = 0; i < a.length; i++) {
 			System.out.println(a[i]);
@@ -18,7 +18,7 @@ public class QuickSort {
 		int b = a[end - 1];
 		int counter = start;
 
-		for (int i = start; i < end; i++) {
+		for (int i = start; i < end-1; i++) {
 			if (a[i] <= b) {
 				if (i != counter) {
 					int hold = a[counter];
@@ -28,9 +28,11 @@ public class QuickSort {
 				counter++;
 			}
 		}
-		sortOnDivNumber(a,start,counter-1);
-		sortOnDivNumber(a,start+counter-1,end);
-		
+		int temp=a[counter];
+		a[counter] = b;
+		a[end-1]=temp;	
+		sortOnDivNumber(a,start,counter);
+		sortOnDivNumber(a,start+counter,end);
 	}
 
 }
